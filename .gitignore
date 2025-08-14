@@ -1,0 +1,3 @@
+.config/io.datasette.llm/*
+!.config/io.datasette.llm/templates/  
+!.config/io.datasette.llm/templates/**
