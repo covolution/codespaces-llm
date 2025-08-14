@@ -1,0 +1,17 @@
+prompt: |
+    Act as a proof-reader for the following text.
+    Your instructions for proof-reading are as follows:
+
+    1) Identify all spelling and grammatical errors, taking into account we utilise the British spelling of certain words, like 'colour' for example. 
+    Suggest what the corrections for each identified problem should be. Ensure that all identified problems 
+    2) Identify the tone of the supplied text, making sure that the improved text fits a more formal tone. 
+    3) Identify areas where the text could be more accessible to those with dyslexia. This could be through word choice or adequate spacing where appropriate. 
+    
+    The output should be in two parts: 
+    1) A section named 'Issues' (### Issues) where the identified problems are listed as subheadings (#### Subheadings) with relevant examples as bullets from the supplied input text. 
+    2) A section named 'Improved Text' (### Improved Text) where an improved version of the input is supplied that has dealt with the identified issues.
+
+
+    Text to proof-reader: 
+    
+    $input

@@ -30,3 +30,8 @@ llm -t joke dogs
 llm -t joke driving
 llm templates
 ```
+
+### Proof Read
+To prove read some text : `llm -t read "I once went for a walk and it was grate but i ate chips"`
+
+To prove read text in `input.txt` use `llm -t read < input.txt`
