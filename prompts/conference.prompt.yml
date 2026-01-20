@@ -6,16 +6,103 @@ messages:
     content: You are an expert at extracting and summarising key information from conference talk transcripts.
   - role: user
     content: |
-      You will be provided with a transcript of a conference talk recording, you need to give a concise summary with clear structure and sections in a formal manner. 
-      The summarisation structure must be in the following format: Title (### Title), Subheading (### Summary), Subheading (### Topics Discussed), Subheading (### References). 
-      Under 'Title', you must provide one sentence that summarises the talk and can be used as the title. 
-      Under 'Summary', compile a coherent and cohesive summary of the source material. This summary should capture the main ideas, supporting details, and any implicit meaning from the original talk.  
-      Under 'Topics Discussed', There must be a numbered list with bold headings (**section**) and each section must have non numbered bullets, going into detail about the main points. 
-      Under 'References', identify and list all quotations referenced by the speaker, or books or websites. The References must be a list, each should include the textual content, followed by the creator/author of this quotation, then a new line.  
-      
-      All Output is in Markdown format, for bullet points use '-' instead of '*'.  
-      Ensure that newlines are used before and after each heading to separate the sections. 
-      Ensure that the response only contains the structured summary with no preceding introductory text.
+      You will be provided with a transcript of a conference talk recording. Your task is to create a concise, well-structured summary in a formal manner.
+
+      # Instructions
+
+      ## Structure Requirements
+      The summary must follow this exact format with four main sections:
+
+      1. **Title** (### heading)
+      2. **Summary** (### heading)
+      3. **Topics Discussed** (### heading)
+      4. **References** (### heading)
+
+      ## Section Guidelines
+
+      ### Title
+      - Provide a single, concise sentence that captures the essence of the talk
+      - This should be clear enough to serve as the talk's title
+      - Keep it under 15 words
+
+      ### Summary
+      - Compile a coherent and cohesive overview of the source material
+      - Capture the main ideas, key arguments, and supporting details
+      - Include any implicit meaning or underlying themes from the talk
+      - Aim for 3-5 paragraphs maximum
+      - Focus on clarity and conciseness
+
+      ### Topics Discussed
+      - Create a numbered list of main topics covered
+      - Each topic should have:
+        - A **bold heading** describing the topic
+        - Multiple bullet points (using '-') with detailed key points
+        - Specific examples or insights mentioned by the speaker
+      - Include 3-7 main topics
+      - Order topics chronologically or by importance
+
+      ### References
+      - List all quotations, books, websites, articles, research papers, or other materials referenced by the speaker
+      - Group references by type using subheadings (**Books**, **Articles & Papers**, **Quotations**, **Web Resources**)
+      - Use a simplified academic citation style for clarity and consistency
+      - Only include categories that have references (omit empty categories)
+      - Use the following standardized format for each reference type:
+
+      **Books:**
+      - Author Last Name, First Initial(s). (Year). *Book Title*. Publisher.
+      - Example: Kahneman, D. (2011). *Thinking, Fast and Slow*. Farrar, Straus and Giroux.
+
+      **Articles & Papers:**
+      - Author Last Name, First Initial(s). (Year). "Article/Paper Title." *Journal/Conference Name*.
+      - For multiple authors, use "et al." after the first author for 3+ authors
+      - Example: Vaswani, A., et al. (2017). "Attention Is All You Need." *NeurIPS*.
+
+      **Quotations:**
+      - "Quote text" — Author Name, Source/Context (Year if known)
+      - Example: "The only way to do great work is to love what you do." — Steve Jobs, Stanford Commencement (2005)
+
+      **Web Resources:**
+      - Author/Organization. (Year). "Page/Article Title." Website Name. URL (if mentioned)
+      - Example: JetBrains. (2025). "The State of Developer Ecosystem 2025." jetbrains.com/research
+
+      **Tools/Frameworks/Concepts:**
+      - Name/Concept — Creator/Author (Context if relevant)
+      - Example: SOLID Principles — Robert C. Martin
+
+      ## Example of References Section Output
+
+      ### References
+
+      **Books**
+      - Kahneman, D. (2011). *Thinking, Fast and Slow*. Farrar, Straus and Giroux.
+      - Martin, R. C. (2008). *Clean Code: A Handbook of Agile Software Craftsmanship*. Prentice Hall.
+
+      **Articles & Papers**
+      - Vaswani, A., et al. (2017). "Attention Is All You Need." *NeurIPS*.
+      - Fowler, M. (2019). "Refactoring: Improving the Design of Existing Code." *IEEE Software*.
+
+      **Quotations**
+      - "The only way to do great work is to love what you do." — Steve Jobs, Stanford Commencement (2005)
+      - "Make it work, make it right, make it fast." — Kent Beck
+
+      **Web Resources**
+      - JetBrains. (2025). "The State of Developer Ecosystem 2025." jetbrains.com/research
+      - Mozilla. (2024). "Web Performance Best Practices." developer.mozilla.org
+
+      **Tools/Frameworks/Concepts**
+      - SOLID Principles — Robert C. Martin
+      - The Twelve-Factor App — Heroku
+
+      ## Output Requirements
+      - Use Markdown format for all output
+      - Use '-' for bullet points (not '*')
+      - Ensure blank lines before and after each heading
+      - Do not include any introductory text, pleasantries, or explanations
+      - Begin directly with the Title section
+      - Maintain professional, formal tone throughout
+
+      # Transcript
+
       <transcript>
       {{input}}
       </transcript>
