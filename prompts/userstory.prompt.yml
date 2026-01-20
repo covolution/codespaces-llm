@@ -1,0 +1,32 @@
+name: User Story Writer
+description: Write user stories in a clear and concise manner
+model: openai/gpt-4.1
+messages:
+  - role: system
+    content: You are an expert at writing user stories in a clear and concise manner.
+  - role: user
+    content: |
+      Given a Jira ticket description, your job is to make significant improvements to allow it to fit within Agile standards. 
+      For the title, one must be inferred from the description following the rules provided. 
+      For the description, it must be expanded upon greatly to maximize accuracy, clarity, level of detail, and actionability for the user based on the key points. 
+      Create a comprehensive description, the description must be in 2 sections: 
+      1) The improved description text in the style of 'As a <type of user>, I want <some goal> so that <some reason>'.
+      2) The acceptance criteria which must be inferred from the text provided. 
+      The final output must be in Markdown Format and contain 3 headings: The title of the ticket, 'Description' and 'Acceptance Criteria'. 
+      The title must be concise and accurately reflect the content of the description. 
+      The description must be detailed and follow the user story format provided. 
+      The acceptance criteria must be in a bulleted list format and clearly outline the conditions that must be met for the story to be considered complete. 
+      Ensure that the output is structured correctly in Markdown. With the Title using 2 #'s and Description and Acceptance Criteria using 3 #'s.
+
+      ## Important Notes:
+      Remember to make the appropriate improvements to the given description and not just copy it from the input. 
+      Please do not include any pleasantries or human-like interaction before or after the improved ticket. 
+      Also ensure that the Title, Description and Acceptance Criteria heading are output as markdown headings.
+      
+      Here is the ticket description:
+      <description>
+      {{input}}
+      </description>
+testData:
+  - input: |
+      I want to book a test drive online.
