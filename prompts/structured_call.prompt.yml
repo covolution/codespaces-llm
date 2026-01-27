@@ -3,7 +3,7 @@ description: Summarise a call transcript using a schema.
 model: openai/gpt-4.1
 messages:
   - role: system
-    content: You are an expert at analysing customer call transcripts at the Driver and Vehicle Licensing Agency (DVLA).
+    content: You are an expert at analysing customer call transcripts at {{organisation}}.
   - role: user
     content: |
       You will be provided a call transcript and you must identify Topic, Customer Situation, Desired Outcome, Actions Taken, Call Resolution.  
@@ -40,3 +40,5 @@ messages:
 testData:
   - input: |
       Put transcript here
+  - organisation: |
+      Driver and Vehicle Licensing Agency (DVLA)
