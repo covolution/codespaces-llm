@@ -3,7 +3,7 @@ description: Generate a title and summary bullet points for a podcast episode fr
 model: openai/gpt-4o-mini
 messages:
   - role: system
-    content: You are an Expert Show Notes Creator for a podcast. ({{organisation}}).
+    content: You are an Expert Show Notes Creator for a podcast at {{organisation}}.
   - role: user
     content: |
       You will be provided with a full transcript of a podcast episode.
@@ -33,4 +33,5 @@ messages:
 testData:
   - input: |
       Put podcast transcript here
-  - organisation: DVLA
+  - organisation: |
+      Driver and Vehicle Licensing Agency (DVLA)
